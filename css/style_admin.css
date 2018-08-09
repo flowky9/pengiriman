@@ -1,0 +1,65 @@
+@charset "utf-8";
+/* style_admin */
+
+/* default */
+*{margin:0; padding:0;}
+body{font-size:14px; font-family:"Myriad Pro"; color:#666;}
+table{border-collapse:collapse; border-spacing:0; margin:0 auto;}
+h1,h2,h3,h4,h5,h6{color:#069;}
+a{text-decoration:none; color:#666;}
+ul{list-style-type:none;}
+input[type="text"],input[type="password"],input[type="email"],input[type="search"],input[type="number"],input[type="reset"],input[type="date"],select,textarea{padding:5px 10px;}
+textarea{min-width:200px; max-width:200px; min-height:80px;}
+input[type="number"]{
+	width:40px;
+}
+.line{border-bottom:1px solid #666;}
+.line-dashed{border-bottom:1px dashed #666;}
+/* ======= */
+
+/* index */
+.logo{padding-top:30px;}
+.logo span{color:#F90;}
+.logo p{font-style:italic;}
+
+.logo h1{
+	-moz-text-shadow:2px 2px 2px rgba(0,0,0,0.2);
+	-webkit-text-shadow:2px 2px 2px rgba(0,0,0,0.2);
+	-o-text-shadow:2px 2px 2px rgba(0,0,0,0.2);
+	text-shadow:2px 2px 2px rgba(0,0,0,0.2);
+}
+.form td{padding:10px 0;}
+.error{font-size:12px; color:#C00; margin-left:8px;}
+.top-bar{background-color:#666; padding:10px 0; padding-right:20px;}
+.top-bar a{color:#FFF;}
+.top-bar a:hover{color:#CCC;}
+.top-button{padding-bottom:15px;}
+.menu{background-color:#EAEAEA; padding:20px;}
+.menu a{padding-top:10px; display:inline-block;}
+.menu a:hover{text-decoration:underline;}
+.menu h4{display:block; padding-bottom:10px; border-bottom:1px dashed #666;}
+.content{background-color:#FFF; padding:30px 10px; padding-left:30px;}
+.judul-halaman{padding-bottom:10px; border-bottom:1px solid #666;}
+.halaman{padding-top:35px; font-weight:600;}
+.halaman span, .halaman a{margin:0 5px;}
+.halaman span{color:#069; cursor:default;}
+.halaman a:hover{color:#069;}
+.footer{padding:15px 0; font-size:12px; background-color:#666; color:#FFF;}
+/* ===== */
+
+.table-tools a{margin:0 2px;}
+
+/* table-list */
+.table-list{font-size:13px;}
+.table-list .head td{padding:5px 10px; border:1px solid #999; background-color:#EAEAEA;}
+.table-list .data td{padding:5px 10px; border:1px solid #999;}
+/* ========== */
+
+/* form-login */
+.form-login{margin-top:150px;}
+.form-login input{margin-top:20px;}
+/* ========== */
+
+input[name="alamat"] {
+    width: 500px;
+}

@@ -217,7 +217,6 @@
 </table>
 
 <script>
-
 // CONVERT FORMAT NUMBER
 function convertToRupiah(angka)
 {
@@ -235,9 +234,5 @@ harga.addEventListener('change', function(e){
 	var value = harga.options[harga.options.selectedIndex].value;
 	//MENAMPILKANYA PADA ELEMENT #NOMINAL
 	document.getElementById('nominal').innerHTML = convertToRupiah(value);
-});
-
-	
-
-    
+}); 
 </script>

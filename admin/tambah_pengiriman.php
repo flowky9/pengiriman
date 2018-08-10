@@ -31,7 +31,7 @@
     <tr>
         <td width="12%">Description</td>
         <td width="88%">
-        <textarea required="required" name="description" id="" cols="30" rows="10"></textarea>
+        <textarea name="description" id="" cols="30" rows="10"></textarea>
         <span class ="error"><?php echo isset($error['nm_perusahaan']) ? $error['nm_perusahaan'] : false;?></span>
         </td>
     </tr>
@@ -205,7 +205,7 @@
     <tr>
         <td></td>
         <td>
-        <input required="required" class="button small grey fontB" type="submit" value="Simpan">
+        <input class="button small grey fontB" type="submit" value="Simpan">
         <a class="button small grey fontB" href="?module=Data_Member">Kembali</a>
         </td>
     </tr>

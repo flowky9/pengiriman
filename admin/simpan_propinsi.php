@@ -3,7 +3,7 @@
 include_once "../library/library.php";
 
 $nama = $_POST['nama'];
-$kd_wil = buatKode('harga','HR','kd_wil');
+$kd_wil = buatKode('harga','HR','kd_harga');
 $biaya = $_POST['biaya'];
 $error = array();
 echo $kd_wil;

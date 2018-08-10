@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 10, 2018 at 08:40 AM
+-- Generation Time: Aug 10, 2018 at 10:30 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.21
 
@@ -67,7 +67,8 @@ INSERT INTO `armada` (`kd_armada`, `nm_armada`, `no_mobil`, `gambar`, `kd_driver
 ('AR005', 'Truk', 'B9187 UEA', 'a5.jpg', 'DR005'),
 ('AR006', 'Pesawat', '', 'image_6.jpg', ''),
 ('AR007', 'Pesawat', 'YT 1846 AH', 'image_5.jpg', 'DR003'),
-('AR008', 'Kapal Laut', 'B 1481 RA', 'image_6.jpg', 'DR004');
+('AR008', 'Kapal Laut', 'B 1481 RA', 'image_6.jpg', 'DR004'),
+('AR009', 'Rocket', 'B 3484 YE', 'tes-1-aja.jpg', 'DR009');
 
 -- --------------------------------------------------------
 
@@ -176,16 +177,17 @@ INSERT INTO `invoice` (`id_invoice`, `id_pengiriman`, `pph`) VALUES
 CREATE TABLE `pengiriman` (
   `kd_pengiriman` varchar(100) NOT NULL,
   `description` varchar(300) NOT NULL,
+  `tanggal` date DEFAULT NULL,
   `satuan` varchar(40) NOT NULL,
   `kd_armada` varchar(20) NOT NULL,
   `kd_driver` varchar(50) NOT NULL,
   `kd_customer` varchar(50) DEFAULT NULL,
   `nm_penerima` varchar(80) NOT NULL,
-  `uang_supir` int(200) NOT NULL,
-  `total_bayar` int(200) NOT NULL,
+  `uang_supir` int(10) NOT NULL,
+  `total_bayar` int(10) NOT NULL,
   `status` varchar(20) NOT NULL,
-  `packinglist` varchar(200) NOT NULL,
-  `kd_harga` varchar(50) NOT NULL,
+  `packinglist` varchar(200) DEFAULT NULL,
+  `harga` int(10) NOT NULL,
   `dp` varchar(200) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -193,11 +195,13 @@ CREATE TABLE `pengiriman` (
 -- Dumping data for table `pengiriman`
 --
 
-INSERT INTO `pengiriman` (`kd_pengiriman`, `description`, `satuan`, `kd_armada`, `kd_driver`, `kd_customer`, `nm_penerima`, `uang_supir`, `total_bayar`, `status`, `packinglist`, `kd_harga`, `dp`) VALUES
-('001/PGS/VIIII/2018', 'Pengiriman Material Pipa Dia 824 P6 M', 'MT', 'AR005', 'DR001', 'CS001', 'Samuel', 10000000, 35000000, 'proses', '', 'HR002', '10000000'),
-('002/PGS/VII/2018', 'Pengiriman Barang Pipa Fender Dia 8 inch & Aksesoris', 'LS', 'AR004', 'DR005', 'CS002', 'Samuel', 10000000, 35000000, 'proses', '', 'HR002', '0'),
-('003/PGS/V/2018', 'Pengiriman Barang Limestone', 'LS', 'AR001', 'DR002', 'CS001', 'Daniel', 15000000, 35000000, 'proses', '', 'HR003', '0'),
-('004/PGS/VII/2018', 'Pengiriman Barang PIPA ', 'MM', 'AR002', 'DR002', 'CS001', 'Daniel', 15000000, 35000000, 'lunas', '', 'HR003', '0');
+INSERT INTO `pengiriman` (`kd_pengiriman`, `description`, `tanggal`, `satuan`, `kd_armada`, `kd_driver`, `kd_customer`, `nm_penerima`, `uang_supir`, `total_bayar`, `status`, `packinglist`, `harga`, `dp`) VALUES
+('001/PGS/VIIII/2018', 'Pengiriman Material Pipa Dia 824 P6 M', '2018-07-03', 'MT', 'AR005', 'DR001', 'CS001', 'Samuel', 10000000, 35000000, 'proses', '', 500000, '10000000'),
+('002/PGS/VII/2018', 'Pengiriman Barang Pipa Fender Dia 8 inch & Aksesoris', '2018-07-25', 'LS', 'AR004', 'DR005', 'CS002', 'Samuel', 10000000, 35000000, 'proses', '', 1000000, '0'),
+('003/PGS/V/2018', 'Pengiriman Barang Limestone', '2018-07-13', 'LS', 'AR001', 'DR002', 'CS001', 'Daniel', 15000000, 35000000, 'proses', '', 1500000, '0'),
+('004/PGS/VII/2018', 'Pengiriman Barang PIPA ', '2018-08-03', 'MM', 'AR002', 'DR002', 'CS001', 'Daniel', 15000000, 35000000, 'lunas', '', 2000000, '0'),
+('005/PGS/VI/2018', '<p>Pengangkutan dan pengiriman rollent dan stand</p>\r\n<p>dari Pabrik Rollent Gresik - Gudang PT Wijaya Karya Gunung Putri</p>\r\n<p>Bogor</p>\r\n<p>Jumlah Barang : 79 pallet</p>\r\n<p>berat barang : 64kg</p>\r\n<p>Pengiriman 10 - 15 Agustus 2018</p>', '2018-08-10', 'ST', 'AR004', 'DR008', 'CS002', 'Asensio', 450000, 30450000, 'proses', '', 30000000, '1000000'),
+('006/PGS/VIII/2018', '<p>Pengiriman manusia&nbsp;</p>\r\n<p>dari pabrik tanah - gudang langit, mars</p>\r\n<p>Bumi</p>\r\n<p>Jumlah : 69 Paket</p>\r\n<p>Berat : 90kg</p>\r\n<p>Pengiriman : 25 - 27 Agustus 2015</p>', '2018-08-10', 'MT', 'AR002', 'DR002', 'CS003', 'Shidqi', 900000, 27900000, 'proses', 'list', 27000000, '2000000');
 
 --
 -- Indexes for dumped tables

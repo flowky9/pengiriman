@@ -19,8 +19,8 @@ elseif($_GET['module'] == "Data_Supir"){
 elseif($_GET['module'] == "Data_Armada"){
 	include "data_armada.php";
 }
-elseif($_GET['module'] == "Data_Transaksi"){
-	include "data_transaksi.php";
+elseif($_GET['module'] == "Data_Pengiriman"){
+	include "data_pengiriman.php";
 }
 elseif($_GET['module'] == "Data_Konfirmasi"){
 	include "data_konfirmasi.php";
@@ -93,6 +93,9 @@ elseif($_GET['module'] == "Simpan_Supir"){
 }
 elseif($_GET['module'] == "Simpan_Produk"){
 	include "simpan_produk.php";
+}
+elseif($_GET['module'] == "Simpan_Pengiriman"){
+	include "simpan_pengiriman.php";
 }
 elseif($_GET['module'] == "Update_Admin"){
 	include "update_admin.php";

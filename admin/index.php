@@ -61,7 +61,7 @@ if(empty($_GET['module'])){
     <li><a href="?module=Data_Propinsi">&raquo; Data Harga</a></li>
     <li><a href="?module=Data_Supir">&raquo; Data Supir</a></li>
     <li><a href="?module=Data_Armada">&raquo; Data Armada</a></li>
-    <li><a href="?module=Data_Transaksi">&raquo; Data Pengiriman</a></li>
+    <li><a href="?module=Data_Pengiriman">&raquo; Data Pengiriman</a></li>
     <li><a href="?module=Data_Konfirmasi">&raquo; Print Invoice</a></li>
     </ul>
     </td>

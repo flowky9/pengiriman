@@ -19,26 +19,26 @@
     
     ?>
     
-    <form action="?module=Simpan_Member" method="post">
+    <form action="?module=Simpan_Pengiriman" method="post">
     <table class="form" width="100%" border="0">
     <tr>
         <td width="12%">Kode Pengiriman</td>
         <td width="88%">
-        <input type="text" name="nm_perusahaan" value="<?php echo buatKodeInv('pengiriman','kd_pengiriman').'/PGS/';?>"/>
-        <span class ="error"><?php echo isset($error['nm_perusahaan']) ? $error['nm_perusahaan'] : false;?></span>
+        <input type="text" name="kd_pengiriman" value="<?php echo buatKodeInv('pengiriman','kd_pengiriman').'/PGS/';?>"/>
+        <span class ="error"><?php echo isset($error['kd_pengiriman']) ? $error['kd_pengiriman'] : false;?></span>
         </td>
     </tr>
     <tr>
         <td width="12%">Description</td>
         <td width="88%">
-        <textarea name="description" id="" cols="30" rows="10"></textarea>
+        <textarea required="required" name="description" id="" cols="30" rows="10"></textarea>
         <span class ="error"><?php echo isset($error['nm_perusahaan']) ? $error['nm_perusahaan'] : false;?></span>
         </td>
     </tr>
     <tr>
         <td>Satuan</td>
         <td>
-        <input type="text" name="satuan" value="<?php echo (isset($_POST['nm_customer'])) ? $_POST['nm_customer'] : false;?>"/>
+        <input required="required" type="text" name="satuan" value="<?php echo (isset($_POST['nm_customer'])) ? $_POST['nm_customer'] : false;?>"/>
 
         <span class="error"><?php echo $error['nm_customer'];?></span>
         </td>
@@ -66,7 +66,7 @@
     <tr>
     	<td width="14%">Driver</td>
     	<td width="86%">
-    	<select name="nm_lengkap">
+    	<select name="kd_driver">
         
         <?php
         $driverpost = isset($_POST['driver']) ? $_POST['driver'] : false;
@@ -96,7 +96,7 @@
     <tr>
     	<td width="14%">Customer</td>
     	<td width="86%">
-    	<select name="nm_lengkap">
+    	<select name="kd_customer">
         
         <?php
         $driverpost = isset($_POST['driver']) ? $_POST['driver'] : false;
@@ -126,24 +126,16 @@
     <tr>
         <td>Nama Penerima</td>
         <td>
-        <input type="text" name="nm_penerima" value="<?php echo (isset($_POST['nm_penerima'])) ? $_POST['nm_penerima'] : false;?>"/>
+        <input  required="required" type="text" name="nm_penerima" value="<?php echo (isset($_POST['nm_penerima'])) ? $_POST['nm_penerima'] : false;?>"/>
 
         <span class="error"><?php echo $error['nm_penerima'];?></span>
-        </td>
-    </tr>
-    <tr>
-        <td>Email</td>
-        <td>
-        <input type="text" name="email" value="<?php echo (isset($_POST['email'])) ? $_POST['email'] : false;?>"/>
-
-        <span class="error"><?php echo isset($error['email']) ? $error['email'] : false;?></span>
         </td>
     </tr>
     <!-- UANG SUPIR -->
     <tr>
         <td>Uang Supir</td>
         <td>
-        <input type="number" name="uang_supir" value="<?php echo (isset($_POST['uang_supir'])) ? $_POST['uang_supir'] : false;?>"/>
+        <input required="required" type="number" name="uang_supir" value="<?php echo (isset($_POST['uang_supir'])) ? $_POST['uang_supir'] : false;?>"/>
 
         <span class="error"><?php echo isset($error['uang_supir']) ? $error['uang_supir'] : false;?></span>
         </td>
@@ -186,9 +178,34 @@
         </td>
     </tr>
     <tr>
+        <td>Status</td>
+        <td>
+        <input selected="selected" type="radio" name="status" value="proses"/> proses
+        <input type="radio" name="status" value="lunas"/> lunas
+
+        <span class="error"><?php echo $error['status'];?></span>
+        </td>
+    </tr>
+    <tr>
+        <td>Packing List</td>
+        <td>
+        <input required="required" type="text" name="packinglist" value="<?php echo (isset($_POST['packinglist'])) ? $_POST['packinglist'] : false;?>"/>
+
+        <span class="error"><?php echo $error['packinglist'];?></span>
+        </td>
+    </tr>
+    <tr>
+        <td>DP</td>
+        <td>
+        <input required="required" type="number" name="dp" value="<?php echo (isset($_POST['dp'])) ? $_POST['dp'] : false;?>"/>
+
+        <span class="error"><?php echo isset($error['dp']) ? $error['dp'] : false;?></span>
+        </td>
+    </tr>
+    <tr>
         <td></td>
         <td>
-        <input class="button small grey fontB" type="submit" value="Simpan">
+        <input required="required" class="button small grey fontB" type="submit" value="Simpan">
         <a class="button small grey fontB" href="?module=Data_Member">Kembali</a>
         </td>
     </tr>
@@ -200,20 +217,25 @@
 </table>
 
 <script>
-	function convertToRupiah(angka)
-	{
-		var rupiah = '';		
-		var angkarev = angka.toString().split('').reverse().join('');
-		for(var i = 0; i < angkarev.length; i++) if(i%3 == 0) rupiah += angkarev.substr(i,3)+'.';
-		return 'Rp. '+rupiah.split('',rupiah.length-1).reverse().join('');
-	}
-	var harga = document.getElementById('harga');
 
-	harga.addEventListener('click', function(e){
-		var value = harga.options[harga.options.selectedIndex].value;
+// CONVERT FORMAT NUMBER
+function convertToRupiah(angka)
+{
+	var rupiah = '';		
+	var angkarev = angka.toString().split('').reverse().join('');
+	for(var i = 0; i < angkarev.length; i++) if(i%3 == 0) rupiah += angkarev.substr(i,3)+'.';
+	return 'Rp. '+rupiah.split('',rupiah.length-1).reverse().join('');
+}
 
-		document.getElementById('nominal').innerHTML = convertToRupiah(value);
-	});
+// MENDAPATKAN SELECT
+var harga = document.getElementById('harga');
+
+// EVENT CHANGE
+harga.addEventListener('change', function(e){
+	var value = harga.options[harga.options.selectedIndex].value;
+	//MENAMPILKANYA PADA ELEMENT #NOMINAL
+	document.getElementById('nominal').innerHTML = convertToRupiah(value);
+});
 
 	
 

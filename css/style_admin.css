@@ -73,3 +73,7 @@ input[type="number"]{
 input[name="alamat"] {
     width: 500px !important;
 }
+
+input[type="radio"] {
+    width: 20px !important;
+}

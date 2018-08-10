@@ -10,7 +10,7 @@
     <?php
 	
 	$id = $_GET['id'];
-	
+	$error = false;
 	if(isset($_SESSION['error'])){
 		$error = $_SESSION['error'];
 		unset($_SESSION['error']);

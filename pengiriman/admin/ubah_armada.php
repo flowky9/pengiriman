@@ -1,6 +1,6 @@
 <table width="100%" border="0">
 <tr>
-	<td class="judul-halaman"><h2>Ubah Data Produk</h2></td>
+	<td class="judul-halaman"><h2>Ubah Data Armada</h2></td>
 </tr>
 <tr>
 	<td>

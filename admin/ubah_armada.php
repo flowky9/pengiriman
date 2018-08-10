@@ -1,6 +1,6 @@
 <table width="100%" border="0">
 <tr>
-	<td class="judul-halaman"><h2>Ubah Data Produk</h2></td>
+	<td class="judul-halaman"><h2>Ubah Data Armada</h2></td>
 </tr>
 <tr>
 	<td>
@@ -21,7 +21,7 @@
 	
 	?>
     
-    <form action="?module=Update_Produk&id=<?php echo $id;?>" method="post" enctype="multipart/form-data">
+    <form action="?module=Update_Armada&id=<?php echo $id;?>" method="post" enctype="multipart/form-data">
     <table class="form" width="100%" border="0">
     <tr>
     	<td width="14%">Kode Produk</td>
@@ -33,14 +33,14 @@
         <td width="14%">Nama Armada</td>
         <td width="86%">
         <input type="text" required="required" name="nm_armada" value="<?php echo (isset($data_armada['nm_armada'])) ? $data_armada['nm_armada'] : false;?>"/>
-        <span class="error"><?php echo $error['nm_armada'];?></span>
+        <span class="error"><?php echo isset($error['nm_armada']) ? $error['nm_armada'] : false;?></span>
         </td>
     </tr>
     <tr>
         <td width="14%">No Plat</td>
         <td width="86%">
         <input type="text" required="required" name="no_plat" value="<?php echo (isset($data_armada['no_mobil'])) ?$data_armada['no_mobil'] : false;?>"/>
-        <span class="error"><?php echo $error['no_plat'];?></span>
+        <span class="error"><?php echo isset($error['no_plat']) ? $error['no_plat'] : false;?></span>
         </td>
         </td>
     </tr>
@@ -48,8 +48,10 @@
     <tr>
         <td>Gambar</td>
         <td>
-        <input type="file" required="required" name="gambar" />
-        <span class="error"><?php echo $error['gambar'];?></span>
+        <input type="file" name="gambar" />
+        <span class="error"><?php echo isset($error['gambar']) ?  $error['gambar'] : false;?></span>
+        <br><br>
+        <img width='100' src="<?php echo '../images/armada/'.$data_armada['gambar'] ?>" alt="">
         </td>
     </tr>
     <tr>
@@ -78,7 +80,7 @@
         <?php } ?>
         
         </select>
-        <span class="error"><?php echo $error['driver'];?></span>
+        <span class="error"><?php echo isset($error['driver']) ? $error['driver'] : false;?></span>
         </td>
     </tr>
     <tr>

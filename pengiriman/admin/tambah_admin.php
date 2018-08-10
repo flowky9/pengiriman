@@ -12,7 +12,7 @@
 	
 	if(isset($_SESSION['post'])){
 		$_POST = $_SESSION['post'];
-		$error = $_SESSION['error'];
+		//$error = $_SESSION['error'];
 		unset($_SESSION['post']);
 		unset($_SESSION['error']);
 	}

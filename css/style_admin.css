@@ -60,6 +60,16 @@ input[type="number"]{
 .form-login input{margin-top:20px;}
 /* ========== */
 
+
+
+.pengiriman-tb input {
+    width: 250px;
+}
+
+.pengiriman-tb select {
+    width: 275px;
+}
+
 input[name="alamat"] {
-    width: 500px;
+    width: 500px !important;
 }

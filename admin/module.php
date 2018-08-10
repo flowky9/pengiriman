@@ -43,6 +43,9 @@ elseif($_GET['module'] == "Tambah_Armada"){
 elseif($_GET['module'] == "Tambah_Member"){
 	include "tambah_member.php";
 }
+elseif($_GET['module'] == "Tambah_Pengiriman"){
+	include "tambah_pengiriman.php";
+}
 elseif($_GET['module'] == "Ubah_Admin"){
 	include "ubah_admin.php";
 }
@@ -93,6 +96,9 @@ elseif($_GET['module'] == "Simpan_Produk"){
 }
 elseif($_GET['module'] == "Update_Admin"){
 	include "update_admin.php";
+}
+elseif($_GET['module'] == "Update_Armada"){
+	include "update_armada.php";
 }
 elseif($_GET['module'] == "Update_Bank"){
 	include "update_bank.php";

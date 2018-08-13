@@ -1,8 +1,21 @@
+<?php 
+include "../config/koneksi.php";
+include_once "../library/library.php";
+
+$kd_pengiriman = $_GET['id'];
+$query = mysql_query("select * from pengiriman where kd_pengiriman = '$kd_pengiriman'");
+$array = mysql_fetch_array($query);
+
+$queryCus = mysql_query("select * from customer where kd_customer = '$array[kd_customer]'");
+$arrayCus = mysql_fetch_array($queryCus);
+
+
+ ?>
 <!doctype html>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>A simple, clean, and responsive HTML invoice template</title>
+    <title><?php echo $array['kd_pengiriman']; ?></title>
     
     <style>
     .invoice-box {
@@ -105,19 +118,7 @@
     }
     </style>
 </head>
-<?php 
-include "../config/koneksi.php";
-include_once "../library/library.php";
 
-$kd_pengiriman = $_GET['id'];
-$query = mysql_query("select * from pengiriman where kd_pengiriman = '$kd_pengiriman'");
-$array = mysql_fetch_array($query);
-
-$queryCus = mysql_query("select * from customer where kd_customer = '$array[kd_customer]'");
-$arrayCus = mysql_fetch_array($queryCus);
-
-
- ?>
 <body>
     <div class="invoice-box">
         <table cellpadding="0" cellspacing="0">

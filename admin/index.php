@@ -44,7 +44,7 @@ if(empty($_GET['module'])){
 <table width="95%" border="0">
 <tr>
 	<td colspan="2" class="logo">
-    <h2>ADMIN</h2>
+    <h2><img src="../images/logo.png" alt="" /></h2>
     <br/>
     </td>
 </tr>
@@ -62,7 +62,7 @@ if(empty($_GET['module'])){
     <li><a href="?module=Data_Supir">&raquo; Data Supir</a></li>
     <li><a href="?module=Data_Armada">&raquo; Data Armada</a></li>
     <li><a href="?module=Data_Pengiriman">&raquo; Data Pengiriman</a></li>
-    <li><a href="?module=Data_Konfirmasi">&raquo; Print Invoice</a></li>
+    <!-- <li><a href="?module=Data_Konfirmasi">&raquo; Print Invoice</a></li> -->
     </ul>
     </td>
 	<td class="content" width="800" valign="top"><?php include "module.php";?></td>

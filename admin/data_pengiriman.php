@@ -53,15 +53,13 @@
         <img src="../images/check.gif" />
         </a>
         <?php } ?>
-        <a href="?module=Detail_Transaksi&id=<?php echo $array['kd_pengiriman'];?>" title="Detail Transaksi">
+
+        <a href="?module=Ubah_Pengiriman&id=<?php echo $array['kd_pengiriman'];?>" title="Ubah Pengiriman">
         <img src="../images/magnifier.gif" />
         </a>
-        <?php
-		if($array['status'] == "proses"){
-		?>
         <a href="?module=Hapus&id=<?php echo $array['kd_pengiriman'];?>&execute=transaksi" title="Hapus" onclick="return confirm ('Anda yakin ingin menghapus <?php echo $array['kd_pengiriman'];?> ?');"><img src="../images/trash.gif" /></a>
         <a href="cetak_invoice.php?id=<?php echo $array['kd_pengiriman'];?>" title="Cetak" onclick="return confirm ('Anda yakin ingin mencetak <?php echo $array['kd_pengiriman'];?> ?');"><img src="../images/print.gif" /></a>
-        <?php } ?>
+
         </td>
     </tr>
     <?php } ?>
